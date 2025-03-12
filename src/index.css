@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 45% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 93%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 221 83% 96%;
+    --accent-foreground: 221 83% 53%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/30 rounded-xl shadow-sm;
+  }
+
+  .transition-all {
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .code-block {
+    @apply font-mono text-sm p-4 rounded-lg bg-foreground/95 text-primary-foreground overflow-x-auto;
+  }
+
+  .code-inline {
+    @apply font-mono text-sm px-1 py-0.5 rounded bg-secondary text-foreground;
+  }
+}
+
+/* Syntax highlighting classes */
+.code-keyword {
+  @apply text-purple-500;
+}
+
+.code-type {
+  @apply text-blue-400;
+}
+
+.code-function {
+  @apply text-yellow-300;
+}
+
+.code-variable {
+  @apply text-orange-400;
+}
+
+.code-property {
+  @apply text-teal-400;
+}
+
+.code-string {
+  @apply text-green-500;
+}
+
+.code-number {
+  @apply text-blue-300;
+}
+
+.code-comment {
+  @apply text-gray-500 italic;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
